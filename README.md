@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Responsive design 
 ![Screenshot from 2021-08-02 20-07-35](https://user-images.githubusercontent.com/23625193/127879632-3c995dee-fa99-4091-93b3-10a9ab1898fa.png)
 ![Screenshot from 2021-08-02 20-05-29](https://user-images.githubusercontent.com/23625193/127879660-bf3510d7-8c6e-4431-9984-e7bba20d0f60.png)
-![Screenshot from 2021-08-02 20-05-17](https://user-images.githubusercontent.com/23625193/127879666-57e86904-da75-47d0-8f85-f43824f39684.png)
+
