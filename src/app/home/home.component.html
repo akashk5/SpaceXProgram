@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="filter-container">
+    <span class="label"> Filters </span> <br>
+    <span class="filter-label"> Launch Year</span>
+    <hr/>
+    <div class="button-container">
+      <div *ngFor="let year of years">
+        <button (click)="filterRocketsByYear('launch_year',year)" class="filter-button" [ngClass]="{'active' : filters.launch_year === year, 'inactive' :!filters.launch_year === year }" >{{year}}</button>
+      </div>
+    </div>
+
+    <span class="filter-label"> Successful Launch</span>
+    <hr/>
+    <div>
+      <div class="button-container-sm">
+        <button (click)="filterRocketsByYear('launch_success',true)" class="filter-button" [ngClass]="{'active' : filters.launch_success === true, 'inactive' :!filters.launch_success === true }">True</button>
+        <button (click)="filterRocketsByYear('launch_success',false)" class="filter-button" [ngClass]="{'active' : filters.launch_success === false, 'inactive' :!filters.launch_success === false }">False</button>
+      </div >
+    </div>
+
+    <span class="filter-label"> Successful Landing</span>
+    <hr/>
+
+    <div class="button-container-sm">
+      <button (click)="filterRocketsByYear('land_success',true)" class="filter-button" [ngClass]="{'active' : filters.land_success === true, 'inactive' :!filters.land_success === true }">True</button>
+      <button (click)="filterRocketsByYear('land_success',false)" class="filter-button" [ngClass]="{'active' : filters.land_success === false, 'inactive' :!filters.land_success === false }">False</button>
+    </div>
+
+    <div>
+
+    </div>
+  </div>
+  <div class="data-container">
+    <div class="data-card" *ngFor="let rocket of rocketList ">
+      <div class="card-img">
+        <img src={{rocket.mission_patch}}/>
+      </div>
+      <div class="card-body">
+        <span class="card-label"> {{rocket.mission_name}} # {{rocket.flight_number}}</span>
+        <div class="card-content">
+          <div *ngIf="!rocket.mission_id.length">
+            <span class="card-content-label">Mission Id : </span>
+            <span class="card-content-value" > - </span>
+
+          </div>
+          <div *ngFor="let id of rocket.mission_id">
+            <span class="card-content-label">Mission Id : </span>
+            <span class="card-content-value" >{{id}}</span>
+
+          </div>
+          <div>
+            <span class="card-content-label">Year of Launch : </span>
+            <span class="card-content-value">{{rocket.launch_year}}</span>
+          </div>
+          <div>
+            <span class="card-content-label">Successful Launch : </span>
+            <span class="card-content-value">{{rocket.launch_success}}</span>
+          </div>
+          <div>
+            <span class="card-content-label">Successful Landing : </span>
+            <span class="card-content-value">{{rocket.land_success }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
